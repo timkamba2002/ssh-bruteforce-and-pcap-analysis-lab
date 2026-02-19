@@ -51,7 +51,7 @@ def write_report(auth_results: dict, pcap_results: dict, out_path: str):
 
         f.write("3. System Status: Log and PCAP data reviewed for SSH and basic L3/L4 activity.\n\n")
 
-        # Recommendations (based on your template) [file:8]
+        # Recommendations [file:8]
         f.write("Recommendations:\n")
         f.write("- Enable multi-factor authentication (MFA) for SSH where possible.\n")
         f.write("- Disable direct root login over SSH and enforce key-based authentication.\n")
