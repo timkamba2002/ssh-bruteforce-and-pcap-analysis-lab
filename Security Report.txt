@@ -1,0 +1,13 @@
+Security Report
+Date: Jan 28, 2026
+Analyst: Johnathan Kissinger
+
+Findings:
+1. Failed Logins: Multiple failed login attempts suggest possible brute-force activity.
+2. Network Anomalies: Unusual outbound traffic detected during off-hours.
+3. System Status: All critical systems are patched and up-to-date.
+
+Recommendations:
+- Enable multi-factor authentication (MFA).
+- Investigate source of anomalous traffic.
+- Maintain regular system updates.
