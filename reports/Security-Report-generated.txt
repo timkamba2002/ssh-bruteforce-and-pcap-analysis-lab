@@ -1,0 +1,66 @@
+Security Report
+Generated: 2026-02-19 15:55:08
+Analyst: Timothy Kamba
+
+Findings:
+1. Failed Logins: Detected 5061 failed SSH login attempts across 61 unique source IPs.
+   - Suspected brute-force activity from the following IPs (>= 10 failed attempts):
+       • 218.92.0.97: 1924 failed attempts
+       • 209.38.20.207: 465 failed attempts
+       • 146.190.101.111: 455 failed attempts
+       • 170.64.235.7: 454 failed attempts
+       • 87.246.7.206: 115 failed attempts
+       • 218.92.0.31: 112 failed attempts
+       • 183.81.169.238: 108 failed attempts
+       • 218.92.0.107: 95 failed attempts
+       • 218.92.0.112: 81 failed attempts
+       • 218.92.0.29: 81 failed attempts
+       • 61.177.172.160: 63 failed attempts
+       • 218.92.0.27: 54 failed attempts
+       • 218.92.0.34: 43 failed attempts
+       • 43.136.95.69: 41 failed attempts
+       • 180.101.88.205: 36 failed attempts
+       • 218.92.0.56: 36 failed attempts
+       • 180.101.88.196: 35 failed attempts
+       • 218.92.0.24: 33 failed attempts
+       • 103.36.84.107: 30 failed attempts
+       • 125.72.13.21: 30 failed attempts
+       • 158.51.124.56: 30 failed attempts
+       • 101.36.118.117: 30 failed attempts
+       • 181.212.81.227: 30 failed attempts
+       • 58.27.95.2: 30 failed attempts
+       • 89.252.146.211: 30 failed attempts
+       • 113.125.43.85: 30 failed attempts
+       • 161.35.212.49: 30 failed attempts
+       • 156.236.74.13: 30 failed attempts
+       • 147.182.243.103: 30 failed attempts
+       • 5.135.36.99: 30 failed attempts
+       • 218.150.246.42: 30 failed attempts
+       • 170.106.136.167: 30 failed attempts
+       • 58.220.29.165: 28 failed attempts
+       • 183.110.116.65: 27 failed attempts
+       • 61.177.172.179: 27 failed attempts
+       • 170.106.153.109: 26 failed attempts
+       • 36.26.66.169: 26 failed attempts
+       • 217.65.82.98: 25 failed attempts
+       • 80.94.95.81: 22 failed attempts
+       • 180.101.88.197: 20 failed attempts
+       • 218.92.0.118: 18 failed attempts
+       • 61.177.172.136: 18 failed attempts
+       • 218.92.0.76: 17 failed attempts
+       • 61.177.172.140: 17 failed attempts
+       • 193.201.9.156: 15 failed attempts
+       • 213.109.202.127: 15 failed attempts
+       • 101.43.73.205: 14 failed attempts
+       • 123.207.55.61: 13 failed attempts
+       • 27.185.52.202: 11 failed attempts
+       • 186.96.145.241: 10 failed attempts
+       • 79.110.62.145: 10 failed attempts
+2. Network Anomalies: PCAP contains 1007 packets (TCP=532, UDP=380, ICMP=0, ARP=95).
+3. System Status: Log and PCAP data reviewed for SSH and basic L3/L4 activity.
+
+Recommendations:
+- Enable multi-factor authentication (MFA) for SSH where possible.
+- Disable direct root login over SSH and enforce key-based authentication.
+- Investigate and, if appropriate, block IPs showing sustained brute-force behavior.
+- Maintain regular system updates and log/PCAP review procedures.
