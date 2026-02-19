@@ -8,13 +8,14 @@ Small blue-team lab that uses Python to detect SSH brute-force activity from Lin
 - Count failed SSH logins per source IP and highlight suspected brute-force activity based on a configurable threshold.[file:1][file:3]
 - Load PCAP files with Scapy and count total packets as well as TCP, UDP, ICMP, and ARP traffic.[file:5]
 - Generate a security report summarizing findings from both the log and PCAP analysis plus basic hardening recommendations.[file:8]
+- Enrich suspicious source IPs with basic OSINT lookups (e.g., VirusTotal, IPQualityScore) to validate malicious activity and reputation.
 
 ## Project Layout
 
 - `app/` – Python code:
   - `ssh_bruteforce_helpers.py` – logic to parse `auth.log` and aggregate failed SSH logins per IP.[file:1][file:3]
   - `pcap_analyzer.py` – functions to read PCAP files and compute protocol-level statistics.[file:5]
-  - other helper scripts used during development.
+  - additional helper scripts used during development.
 - `data/` – sample `auth.log` and PCAP files used for analysis.[file:1][file:5]
 - `reports/` – security report template and auto-generated report.
 - `main.py` – orchestrates SSH log analysis and PCAP analysis, then writes a combined security report.[file:1][file:5][file:8]
@@ -46,9 +47,23 @@ Total packets and basic protocol breakdown (TCP/UDP/ICMP/ARP) from the PCAP.[fil
 
 High-level recommendations such as enabling MFA, disabling direct root login, and reviewing high-volume attacker IPs.[file:8]
 
+OSINT Enrichment Workflow
+
+![OSINT enrichment of attacker IP](screenshots/osint-virustotal.png)
+
+After identifying high-volume attacker IPs in the logs, you can pivot into OSINT to validate their reputation:
+
+Look up suspicious IPs in VirusTotal to see how many security vendors flag them as malicious or phishing-related.
+
+Use IPQualityScore (IPQS) to check IP reputation scores, proxy/VPN detection, and “abusive IP” risk levels.
+
+Incorporate these findings into your report to justify blocking or further investigation of specific sources.
+
 Use Cases
 Practice parsing Linux authentication logs for SSH security events.[file:1][file:2][file:3]
 
 Build intuition around brute-force detection thresholds and attacker behavior.
 
 Explore basic PCAP inspection workflows with Scapy from a blue-team perspective.[file:5]
+
+Practice pivoting from detections to OSINT enrichment as part of an end-to-end SOC investigation.
