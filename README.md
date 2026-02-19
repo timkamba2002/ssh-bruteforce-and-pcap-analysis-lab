@@ -11,7 +11,7 @@ Small blue-team lab that uses Python to detect SSH brute-force activity from Lin
 
 ## Layout
 
-- `src/` – Python scripts for log parsing, brute-force detection, and PCAP analysis.
+- `code/` – Python scripts for log parsing, brute-force detection, and PCAP analysis.
 - `data/` – sample `auth.log` and PCAP files.
 - `reports/` – security report template and generated report(s).
 
@@ -23,5 +23,5 @@ cd ssh-bruteforce-and-pcap-analysis-lab
 
 pip install scapy
 
-python src/pcap_analyzer.py
-python src/ssh_bruteforce_detector.py
+python code/pcap_analyzer.py
+python code/ssh_bruteforce_detector.py
